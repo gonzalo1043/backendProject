@@ -4,6 +4,8 @@
     "title": "#8",
     "description": "artista - Buenos Muchachos",
     "price": 40,
+    "status": true,
+    "category": "Rock",
     "thumbnail": "Sin imagen",
     "code": "abc123",
     "stock": 5
