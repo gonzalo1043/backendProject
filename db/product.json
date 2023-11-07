@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "title": "#8",
+    "description": "artista - Buenos Muchachos",
+    "price": 40,
+    "thumbnail": "Sin imagen",
+    "code": "abc123",
+    "stock": 5
+  },
+  {
+    "id": 2,
+    "title": "Final Cut'",
+    "description": "artista - Pink Floyd",
+    "price": 35,
+    "status": true,
+    "category": "Rock",
+    "thumbnail": "Sin imagen",
+    "code": "abc12",
+    "stock": 5
+  },
+  {
+    "id": 3,
+    "title": "Parte de la Religion",
+    "description": "artista - Charly Garcia",
+    "price": 32,
+    "status": true,
+    "category": "Rock",
+    "thumbnail": "Sin imagen",
+    "code": "abc124",
+    "stock": 7
+  },
+  {
+    "id": 4,
+    "title": "Nightclubbing",
+    "description": "artista - Grace Jones",
+    "price": 50,
+    "status": true,
+    "category": "Rock",
+    "thumbnail": "Sin imagen",
+    "code": "abc1",
+    "stock": 7
+  },
+  {
+    "id": 5,
+    "title": "Superficie de Placer",
+    "description": "artista - Virus",
+    "price": 35,
+    "status": true,
+    "category": "Rock",
+    "thumbnail": "Sin imagen",
+    "code": "abc",
+    "stock": 9
+  },
+  {
+    "id": 6,
+    "title": "Donde estan los ladrones",
+    "description": "artista - Shakira",
+    "price": 30,
+    "status": true,
+    "category": "Pop",
+    "thumbnail": "Sin imagen",
+    "code": "abc2341",
+    "stock": 3
+  },
+  {
+    "id": 7,
+    "title": "Discutible",
+    "description": "artista - Babasonicos",
+    "price": 32,
+    "status": true,
+    "category": "Rock",
+    "thumbnail": "Sin imagen",
+    "code": "cambiodecodigo1",
+    "stock": 10
+  },
+  {
+    "id": 8,
+    "title": "Scarlet",
+    "description": "artista - Doja Cat",
+    "price": 52,
+    "status": true,
+    "category": "Rap",
+    "thumbnail": "Sin imagen",
+    "code": "abc23411",
+    "stock": 10
+  }
+]
