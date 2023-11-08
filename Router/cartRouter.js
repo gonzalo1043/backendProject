@@ -18,26 +18,42 @@ cartRouter.post('/carts', async (req, res) => {
 })
 
 cartRouter.get('/carts/:cid', async(req, res) => {
-    const cartId = parseInt(req.params.cid)
-    res.json(await cm.getCartById(cartId))
+    try {
+        const cartId = parseInt(req.params.cid)
+        res.json(await cm.getCartById(cartId))
+    } catch (error) {
+        res.status(400).json({ errorMessage : error.message})
+    }
 })
 
 cartRouter.post('/carts/:cid/product/:pid', async(req, res) => {
-    const cartId = parseInt(req.params.cid)
-
-    const productId = parseInt(req.params.pid)  
-    const product = await pm.getProductById(productId)
-
-    res.json(await cm.addProductToCart(cartId, product))
+    try {
+        const cartId = parseInt(req.params.cid)
+    
+        const productId = parseInt(req.params.pid)  
+        const product = await pm.getProductById(productId)
+    
+        res.json(await cm.addProductToCart(cartId, product))
+    } catch (error) {
+        res.status(400).json({ errorMessage : error.message})
+    }
 })
 
 cartRouter.delete('/carts/:did', async (req, res) => {
-    const cartId = parseInt(req.params.did)
-    res.json(await cm.deleteCart(cartId))
+    try {
+        const cartId = parseInt(req.params.did)
+        res.json(await cm.deleteCart(cartId))
+    } catch (error) {
+        res.status(400).json({ errorMessage : error.message})
+    }
 })
 
 cartRouter.delete('/carts', async (req, res) => {
-    res.json(await cm.deleteAll())
+    try {
+        res.json(await cm.deleteAll())
+    } catch (error) {
+        res.status(400).json({ errorMessage : error.message})
+    }
 }) 
 
 

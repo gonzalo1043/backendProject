@@ -39,6 +39,10 @@ export class ProductManager {
     async modificarProductos(id, prodData) {
         await this.#leerProducto()
         const index = this.#products.findIndex (p => p.id === id)
+        const codeExist = this.#products.find(p => p.code === prodData.code)
+        if (codeExist) {
+            throw new Error ('error al actualizar: el codigo ya existe')
+        }
         if (index == -1) {
             throw new Error ('error al actualizar: producto no encontrado')
         } else if (prodData.id) {

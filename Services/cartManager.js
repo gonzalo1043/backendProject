@@ -62,9 +62,11 @@ export class CartManager {
         const cartBuscado =  this.#cart.find(c => c.id === cartId)
         const productId = product.id
         let quantity = 1
-
+        
+        if (!cartBuscado) throw new Error ('El carrito no existe')
+        
         const productExist = cartBuscado.products.find(p => p.id === productId)
-
+        
         if (productExist) {
             productExist.quantity = productExist.quantity + 1
         } else {
@@ -92,6 +94,7 @@ export class CartManager {
         await this.#leerCarrito()
         this.#cart = []
         await this.#escribirCarrito()
+        
     }
 }
 
