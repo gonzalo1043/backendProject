@@ -1,10 +1,10 @@
 import fs from 'fs/promises'
-import { CARTPATH } from '../src/config.js';
-import { Cart } from '../models/Cart.js';
+import { CARTPATH } from '../../../config/serverConfig.js';
+import { Cart } from '../../../models/CartFileSystem.js';
 
 const ruta = CARTPATH
 
-export class CartManager {
+export class CartManagerArchivos {
     #cart 
     #products = []
 

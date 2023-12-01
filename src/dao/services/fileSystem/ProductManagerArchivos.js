@@ -1,10 +1,10 @@
 import fs from 'fs/promises'
-import { Product } from '../models/Product.js';
-import { PRODUCTS_PATH } from '../src/config.js';
+import { Product } from '../../../models/ProductFileSystem.js';
+import { PRODUCTS_PATH } from '../../../config/serverConfig.js';
 
 const ruta = PRODUCTS_PATH 
 
-export class ProductManager {
+export class ProductManagerArchivos {
     #products 
 
     constructor() {
