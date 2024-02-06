@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import { randomUUID } from "crypto";
 
 
 const productSchema = new Schema({

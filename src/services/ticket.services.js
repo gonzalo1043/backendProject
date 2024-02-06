@@ -1,5 +1,6 @@
 import { randomUUID } from 'crypto'
 import { cartDao, productDao, ticketDao, usersDao } from '../daos/index'
+import { CartService } from './cart.services'
 
 class TicketService {
     async readOne(criteria) {
@@ -42,6 +43,13 @@ class TicketService {
         })
 
         return ticket
+    }
+
+    async incomplete(cartId) {
+        const cart = await CartService.readOne({_id: cartId})
+        const products = [cart.products]
+
+        return products
     }
 
 }

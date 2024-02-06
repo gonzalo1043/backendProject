@@ -1,6 +1,6 @@
 import passport from "passport"
-import { appendJwtAsCookie, removeJwtFromCookies } from "../middlewares/authenticate"
-import { usersOnly } from "../middlewares/authorization"
+import { appendJwtAsCookie, removeJwtFromCookies } from "../middlewares/authenticate.js"
+import { usersOnly } from "../middlewares/authorization.js"
 
 // login
 export async function handlePost(req, res, next) {

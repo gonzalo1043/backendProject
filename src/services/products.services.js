@@ -1,5 +1,5 @@
 import {randomUUID} from 'crypto'
-import { productDao } from '../daos/index'
+import { productDao } from '../daos/index.js'
 
 class ProductService {
 

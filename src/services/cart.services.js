@@ -1,5 +1,7 @@
 import {randomUUID} from 'crypto'
-import { cartDao, productDao } from '../daos/index'
+import { cartDao, productDao } from '../daos/index.js'
+import { CartDoesntExistError } from '../models/errors/CartDoesntExistError.js'
+import { ProductDoesntExistError } from '../models/errors/ProductDoesntExistError.js'
 
 class CartService {
     async readOne(criteria) {
@@ -19,10 +21,15 @@ class CartService {
     async addProductToCart({cartId, productId}) {
 
         const cart = await cartDao.readOne({_id: cartId})
-        if(!cart) throw new Error ('No existe el carrito')
+        
+        if(!cart) {
+            throw CartDoesntExistError()
+        }
 
         const product = await productDao.readOne({_id: productId})
-        if(!product) throw new Error ('No existe el producto')
+        if(!product) {
+            throw ProductDoesntExistError()
+        }
 
         const productCart = cart.products.find(p => p._id === productId)
 
@@ -57,10 +64,10 @@ class CartService {
         }
 
         if(!cart) {
-            throw new Error ('error al actualizar: el carrito no existe')
+            throw CartDoesntExistError()
         }
         if(!product) {
-            throw new Error ('error al actualizar: el producto no existe')
+            throw ProductDoesntExistError()
         }
     }
 
@@ -103,4 +110,4 @@ class CartService {
     }
 }
 
-export const CartService = new CartService()
+export const cartService = new CartService()

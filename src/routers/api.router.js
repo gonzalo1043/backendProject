@@ -1,9 +1,11 @@
-import { Router } from "express";
-import { cartRouter } from "./cart.router";
-import { productsRouter } from "./products.router";
-import { sessionRouter } from "./session.router";
-import { usersRouter } from "./users.router";
-import { metodosPersonalizados } from "../middlewares/metodosPersonalizados";
+import { Router, json } from "express";
+import { cartRouter } from "./cart.router.js";
+import { productsRouter } from "./products.router.js";
+import { sessionRouter } from "./session.router.js";
+import { usersRouter } from "./users.router.js";
+import { metodosPersonalizados } from "../middlewares/metodosPersonalizados.js";
+import { productsMockRouter } from "./products.mock.router.js";
+import { errorHandler } from "../middlewares/errorHandler.js";
 
 
 export const apiRouter = Router()
@@ -16,5 +18,6 @@ apiRouter.use('/cart', cartRouter)
 apiRouter.use('/products', productsRouter)
 apiRouter.use('/session', sessionRouter)
 apiRouter.use('/users', usersRouter)
+apiRouter.use('/', productsMockRouter)
 
 apiRouter.use(errorHandler)

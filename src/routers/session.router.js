@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { handleDelete, handleGetCurrent, handlePost } from "../controllers/session.controllers";
+import { handleDelete, handleGetCurrent, handlePost } from "../controllers/session.controllers.js";
 
 export const sessionRouter = Router()
 

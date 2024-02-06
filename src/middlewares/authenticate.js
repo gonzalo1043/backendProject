@@ -1,10 +1,10 @@
 import passport from "passport";
 import { Strategy as LocalStrategy} from "passport-local";
-import { userService } from "../services/users.services";
+import { userService } from "../services/users.services.js";
 
 import { ExtractJwt, Strategy as JwtStrategy } from "passport-jwt";
-import { JWT_PRIVATE_KEY } from "../config/config";
-import { encriptar } from "../utils/criptografia";
+import { JWT_PRIVATE_KEY } from "../config/config.js";
+import { encriptar } from "../utils/criptografia.js";
 
 
 const COOKIE_OPTS = { signed: true, maxAge: 1000 * 60 * 60, httpOnly: true }

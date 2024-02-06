@@ -1,7 +1,7 @@
 import passport from "passport"
-import { appendJwtAsCookie } from "../middlewares/authenticate"
-import { adminsOnly, usersOnly } from "../middlewares/authorization"
-import { userService } from "../services/users.services"
+import { appendJwtAsCookie } from "../middlewares/authenticate.js"
+import { adminsOnly, usersOnly } from "../middlewares/authorization.js"
+import { userService } from "../services/users.services.js"
 
 export async function handleGet(req, res, next) {
     try {

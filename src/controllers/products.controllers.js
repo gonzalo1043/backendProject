@@ -1,4 +1,4 @@
-import { productService } from "../services/products.services"
+import { productService } from "../services/products.services.js"
 
 export async function handleGet(req, res, next) {
     const limit = parseInt(req.query.limit)

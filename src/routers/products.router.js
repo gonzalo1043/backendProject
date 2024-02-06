@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { handleDelete, handleGet, handleGetById, handlePost, handlePut } from "../controllers/products.controllers";
-import { adminsOnly } from "../middlewares/authorization";
+import { handleDelete, handleGet, handleGetById, handlePost, handlePut } from "../controllers/products.controllers.js";
+import { adminsOnly } from "../middlewares/authorization.js";
 
 export const productsRouter = Router()
 

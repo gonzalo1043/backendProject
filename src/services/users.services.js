@@ -1,6 +1,9 @@
 import {randomUUID} from 'crypto'
-import { usersDao } from '../daos/index'
-import { hasheadasSonIguales, hashear } from '../utils/criptografia'
+import { usersDao } from '../daos/index.js'
+import { hasheadasSonIguales, hashear } from '../utils/criptografia.js'
+import { AuthenticationError } from '../models/errors/AuthenticationError.js'
+
+
 
 class UserService {
     async readOne(criteria) {
@@ -18,11 +21,13 @@ class UserService {
 
     async login ({username, password}) {
         const user = await usersDao.readOne({username})
-        if(!user) throw new Error ('authentication error')
+        if(!user) {
+            throw AuthenticationError()
+        }
         if (!hasheadasSonIguales({
             recibida: password,
             almacenada: user.password
-        })) throw new Error ('authetication error')
+        })) throw AuthenticationError()
     }
 
 }

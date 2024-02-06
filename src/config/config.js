@@ -15,9 +15,12 @@ dotenv.config({
     path: prod ? './config/prod.env' : './config/dev.env'
 })
 
-export const PORT = process.env.PORT;
+// export const PORT = process.env.PORT;
 export const MODE = process.env.MODE
-export const CNX_STR = process.env.CNX_STR
+// export const CNX_STR = process.env.CNX_STR
+
+export const PORT = 8080
+export const CNX_STR = 'mongodb+srv://gonzalociresa1:perro123@cluster0.m0kcvtz.mongodb.net/clases'
 
 export const JWT_PRIVATE_KEY = 'jwtsecret'
 export const COOKIE_SECRET = 'cookiesecret'
